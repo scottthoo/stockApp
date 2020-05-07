@@ -1,2 +1,20 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Welcome!</h1>
+<p>This app help you to manage your portfolio.</p>
+
+<%= form_tag( root_path , remote: false) do |f| %>
+<%= text_field_tag (:ticker),nil,placeholder:'Enter Ticker Symbol' , size:50 %>
+<%= submit_tag 'Lookup'%>
+<% end %>
+
+<% if @stock%>
+<img src="<%= @stockLogo.url%> "><br />
+<%= @stock.company_name%><br />
+$<%= @stock.latest_price%><br />
+<% elsif @nothing%>
+<%= @nothing%>
+
+<%end%>
+
+<% if @error %>
+<%= @error%>
+<%end%>
