@@ -11,12 +11,12 @@
 </div>
 <% end %>
 
-<div class="field">
+<div class="field form-group ">
   <%= form.label :ticker %>
-  <%= form.text_field :ticker %>
+  <%= form.text_field :ticker ,class:'form-control' %>
 </div>
 
-<div class="field">
+<div class="field form-group ">
   <%= form.number_field :user_id , id: :stock_user_id, value:current_user.id,type: :hidden %>
 </div>
 
