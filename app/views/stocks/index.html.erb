@@ -32,7 +32,7 @@
 
 
     <tr>
-      <td><img src="<%= @stockLogo.url%> "></td>
+      <td><img src="<%= @stockLogo.url%>" width="50" object-fit="scale-down"></td>
       <td><%= link_to @ticker.company_name, stock %></td>
       <td><%= @ticker.symbol %></td>
       <td>$<%= number_with_precision(@ticker.latest_price, :precision =>2, :delimiter => ',' ) %></td>
@@ -48,6 +48,4 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Stock', new_stock_path %>
+<%= link_to 'Add New Stock', new_stock_path %>
